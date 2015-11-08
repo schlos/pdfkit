@@ -45,7 +45,7 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
      });
      
   // and some justified text wrapped into columns
-  doc.text('ŽALBA', 100, 150)
+  doc.text('ŽALBA', 100, 200)
      .font('Times-Roman', 13)
      .moveDown()
      .text(lorem, {
