@@ -7,34 +7,50 @@ require('brace/theme/monokai');
 
 var lorem = 'Navedenim Rješenjem odbijen je zahtjev za pristup informaciji koji sam podnio dana_____________________20___. godine.  U zahtjevu sam zatražio/la od tijela javne vlasti  informaciju____________________________________________________________________________________________________________________ Tijelo javne vlasti je suprotno odredbama članka 23. stavka 5. Zakona o pravu na pristup informacijama („Narodne novine”, broj 25/13. i 85/15.) odbilo moj zahtjev zbog ___________________________________________________________________. Odbijanjem zahtjeva uskraćeno mi je zakonsko ostvarenje prava na pristup informacijama. Rješenje osporavam u cijelosti, odnosno u dijelu ___________________________________________________________________, te sukladno članku  25. Zakona o pravu na pristup informacijama u zakonskom roku od 15 dana od dana dostave Rješenje izjavljujem  žalbu: zbog  nepotpuno i pogrešnog utvrđenog činjeničnog stanja zbog pogrešne primjene zakona ________________________________________________. Tijelo javne vlasti je nepotpuno utvrdilo činjenično stanje iz razloga_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________. Na tako utvrđeno činjenično stanje  pogrešno je primijenilo Zakon o pravu na pristup informacijama jer____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________. Iz svega navedenog je vidljivo da  ne postoje razlozi za odbijanje zahtjeva za pristup informacijama i uskratu zatražene informacije. Na temelju navedenih razloga, predlažem Povjereniku za informiranje da uvaži moju žalbu,  poništi  Rješenje tijela javne vlasti i omogući mi pristup zatraženoj informaciji.';
 
+var korisnik = 'Ime i prezime';
+
+var korisnikadresa = 'Adresa';
+
+var pristupinfo = 'Povjerenik za informiranje \nJurišićeva 19 \n10000 Zagreb';
+
 function makePDF(PDFDocument, blobStream, lorem, iframe) {
   // create a document and pipe to a blob
   var doc = new PDFDocument();
   var stream = doc.pipe(blobStream());
   
   // draw some text
-  doc.fontSize(25)
-     .text('ŽALBA PROTIV RJEŠENJA TIJELA JAVNE VLASTI KOJIM JE ODBIJEN ZAHTJEV ZA PRISTUP INFORMACIJI', 100, 80);
-     
-  // some vector graphics
-  doc.save()
-     .moveTo(100, 150)
-     .lineTo(100, 250)
-     .lineTo(200, 250)
-     .fill("#FF3300");
-     
-  doc.circle(280, 200, 50)
-     .fill("#6600FF");
-     
-  // an SVG path
-  doc.scale(0.6)
-     .translate(470, 130)
-     .path('M 250,75 L 323,301 131,161 369,161 177,301 z')
-     .fill('red', 'even-odd')
-     .restore();
+  doc.fontSize(15)
+     .text('Žalba protiv rješenja tijela javne vlasti kojim je odbijen zahtjev za pristup informaciji', 100, 80, {
+         align: 'center'
+     });
+
+  // and some justified text wrapped into columns
+  doc.text('', 100, 120)
+     .font('Times-Roman', 13)
+     .moveDown()
+     .text(korisnik, {
+       width: 412,
+       align: 'left',
+       ellipsis: true
+     })
+     .text(korisnikadresa, {
+       width: 412,
+       align: 'left',
+       ellipsis: true
+     });
+
+  // and some justified text wrapped into columns
+  doc.text('', 100, 120)
+     .font('Times-Roman', 13)
+     .moveDown()
+     .text(pristupinfo, {
+       width: 412,
+       align: 'right',
+       ellipsis: true
+     });
      
   // and some justified text wrapped into columns
-  doc.text('And here is some wrapped text...', 100, 300)
+  doc.text('ŽALBA', 100, 120)
      .font('Times-Roman', 13)
      .moveDown()
      .text(lorem, {
@@ -42,7 +58,6 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
        align: 'justify',
        indent: 30,
        columns: 1,
-       height: 300,
        ellipsis: true
      });
      
