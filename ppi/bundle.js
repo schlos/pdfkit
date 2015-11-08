@@ -44,10 +44,12 @@ function makePDF(PDFDocument, blobStream, lorem, korisnik, korisnikadresa,pristu
      });
      
   // and some justified text wrapped into columns
-  doc.text('ŽALBA', 100, 200, {
-    align: 'center'
-  })
-     .font('Times-Roman', 20);
+  doc.font('Times-Roman', 20)
+     .moveDown()
+     .text("ŽALBA", {
+       width: 412,
+       align: 'center',
+     });
 
   // and some justified text wrapped into columns
   doc.font('Times-Roman', 13)
