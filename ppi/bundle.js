@@ -13,7 +13,7 @@ var korisnikadresa = 'Adresa';
 
 var pristupinfo = 'Povjerenik za informiranje Jurisiceva 19 10000 Zagreb';
 
-function makePDF(PDFDocument, blobStream, lorem, iframe) {
+function makePDF(PDFDocument, blobStream, lorem, korisnik, korisnikadresa,pristupinfo, iframe) {
   // create a document and pipe to a blob
   var doc = new PDFDocument();
   var stream = doc.pipe(blobStream());
