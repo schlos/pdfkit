@@ -5,25 +5,7 @@ var ace = require('brace');
 require('brace/mode/javascript');
 require('brace/theme/monokai');
 
-var lorem = 'Navedenim Rješenjem odbijen je zahtjev za pristup informaciji koji sam podnio dana_____________________20___. godine.  U zahtjevu sam zatražio/la od tijela javne vlasti  informaciju_________________________________________________ 
-
-___________________________________________________________________ Tijelo javne vlasti je suprotno odredbama članka 23. stavka 5. Zakona o pravu na pristup informacijama („Narodne novine”, broj 25/13. i 85/15.) odbilo moj zahtjev zbog
-
-___________________________________________________________________. Odbijanjem zahtjeva uskraćeno mi je zakonsko ostvarenje prava na pristup informacijama. 
-Rješenje osporavam u cijelosti, odnosno u dijelu ___________________________________________________________________, te sukladno članku  25. Zakona o pravu na pristup informacijama u zakonskom roku od 15 dana od dana dostave Rješenje izjavljujem  žalbu:
-
-zbog  nepotpuno i pogrešnog utvrđenog činjeničnog stanja 
- zbog pogrešne primjene zakona
-
-________________________________________________
-
-  (navesti)
-
-Tijelo javne vlasti je nepotpuno utvrdilo činjenično stanje iz razloga_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
- Na tako utvrđeno činjenično stanje  pogrešno je primijenilo Zakon o pravu na pristup informacijama jer________________________________________________
-____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
- Iz svega navedenog je vidljivo da  ne postoje razlozi za odbijanje zahtjeva za pristup informacijama i uskratu zatražene informacije. 
-Na temelju navedenih razloga, predlažem Povjereniku za informiranje da uvaži moju žalbu,  poništi  Rješenje tijela javne vlasti i omogući mi pristup zatraženoj informaciji.';
+var lorem = 'Navedenim Rješenjem odbijen je zahtjev za pristup informaciji koji sam podnio dana_____________________20___. godine.  U zahtjevu sam zatražio/la od tijela javne vlasti  informaciju____________________________________________________________________________________________________________________ Tijelo javne vlasti je suprotno odredbama članka 23. stavka 5. Zakona o pravu na pristup informacijama („Narodne novine”, broj 25/13. i 85/15.) odbilo moj zahtjev zbog ___________________________________________________________________. Odbijanjem zahtjeva uskraćeno mi je zakonsko ostvarenje prava na pristup informacijama. Rješenje osporavam u cijelosti, odnosno u dijelu ___________________________________________________________________, te sukladno članku  25. Zakona o pravu na pristup informacijama u zakonskom roku od 15 dana od dana dostave Rješenje izjavljujem  žalbu: zbog  nepotpuno i pogrešnog utvrđenog činjeničnog stanja zbog pogrešne primjene zakona ________________________________________________. Tijelo javne vlasti je nepotpuno utvrdilo činjenično stanje iz razloga_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________. Na tako utvrđeno činjenično stanje  pogrešno je primijenilo Zakon o pravu na pristup informacijama jer____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________. Iz svega navedenog je vidljivo da  ne postoje razlozi za odbijanje zahtjeva za pristup informacijama i uskratu zatražene informacije. Na temelju navedenih razloga, predlažem Povjereniku za informiranje da uvaži moju žalbu,  poništi  Rješenje tijela javne vlasti i omogući mi pristup zatraženoj informaciji.';
 
 function makePDF(PDFDocument, blobStream, lorem, iframe) {
   // create a document and pipe to a blob
