@@ -79,11 +79,11 @@ editor.setValue(
 editor.getSession().getSelection().clearSelection();
 
 var iframe = document.querySelector('iframe');
-makePDF(PDFDocument, blobStream, lorem, iframe);
+makePDF(PDFDocument, blobStream, lorem, korisnik, korisnikadresa, pristupinfo, iframe);
 
 editor.getSession().on('change', function() {
   try {
-    var fn = new Function("PDFDocument", "blobStream", "lorem", "iframe", editor.getValue());
+    var fn = new Function("PDFDocument", "blobStream", "lorem", "korisnik", "korisnikadresa", "pristupinfo", "iframe", editor.getValue());
     fn(PDFDocument, blobStream, lorem, iframe);
   } catch (e) {
     console.log(e)
