@@ -11,7 +11,7 @@ var korisnik = 'Ime i prezime';
 
 var korisnikadresa = 'Adresa';
 
-var pristupinfo = 'Povjerenik za informiranje Jurišićeva 19 10000 Zagreb';
+var pristupinfo = 'Povjerenik za informiranje Jurisiceva 19 10000 Zagreb';
 
 function makePDF(PDFDocument, blobStream, lorem, iframe) {
   // create a document and pipe to a blob
