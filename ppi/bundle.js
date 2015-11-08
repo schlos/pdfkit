@@ -25,8 +25,7 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
      });
 
   // and some justified text wrapped into columns
-  doc.text('', 100, 120)
-     .font('Times-Roman', 13)
+  doc.font('Times-Roman', 13)
      .moveDown()
      .text(korisnik, {
        width: 412,
@@ -45,8 +44,13 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
      });
      
   // and some justified text wrapped into columns
-  doc.text('ŽALBA', 100, 200)
-     .font('Times-Roman', 13)
+  doc.text('ŽALBA', 100, 200, {
+    align: 'center'
+  })
+     .font('Times-Roman', 20);
+
+  // and some justified text wrapped into columns
+  doc.font('Times-Roman', 13)
      .moveDown()
      .text(lorem, {
        width: 412,
