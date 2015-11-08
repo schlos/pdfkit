@@ -11,7 +11,7 @@ var korisnik = 'Ime i prezime';
 
 var korisnikadresa = 'Adresa';
 
-var pristupinfo = 'Povjerenik za informiranje \nJurišićeva 19 \n10000 Zagreb';
+var pristupinfo = 'Povjerenik za informiranje Jurišićeva 19 10000 Zagreb';
 
 function makePDF(PDFDocument, blobStream, lorem, iframe) {
   // create a document and pipe to a blob
@@ -37,12 +37,7 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
        width: 412,
        align: 'left',
        ellipsis: true
-     });
-
-  // and some justified text wrapped into columns
-  doc.text('', 100, 120)
-     .font('Times-Roman', 13)
-     .moveDown()
+     })
      .text(pristupinfo, {
        width: 412,
        align: 'right',
@@ -50,7 +45,7 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
      });
      
   // and some justified text wrapped into columns
-  doc.text('ŽALBA', 100, 120)
+  doc.text('ŽALBA', 100, 150)
      .font('Times-Roman', 13)
      .moveDown()
      .text(lorem, {
